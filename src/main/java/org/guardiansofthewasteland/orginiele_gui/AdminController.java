@@ -55,7 +55,6 @@ public class AdminController {
         Scene scene = new Scene(fxmlLoader.load(), 320, 600);
 
         Stage stage = (Stage) welcomeText.getScene().getWindow();
-        stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
 
