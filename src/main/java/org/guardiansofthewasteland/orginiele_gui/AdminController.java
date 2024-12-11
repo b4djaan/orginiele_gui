@@ -33,7 +33,7 @@ public class AdminController {
     private TextField passwordField;
 
     @FXML
-    private void onAddUserButtonClick() {
+    private void onAddUserButtonClick() throws IOException {
         String name = nameField.getText();
         String email = emailField.getText();
         String address = locationField.getText();
@@ -48,15 +48,12 @@ public class AdminController {
 
         welcomeText.setText("De account is aangemaakt.");
         System.out.println("De account is aangemaakt.");
+
     }
     @FXML
     private void onReturnButtonClick() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("home-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 600);
 
-        Stage stage = (Stage) welcomeText.getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+        MainApplication.switchView((Stage) welcomeText.getScene().getWindow(), "user.fxml");
 
         System.out.println("onReturnButtonClick() called");
     }

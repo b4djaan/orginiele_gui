@@ -10,7 +10,11 @@ import java.io.IOException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("admin.fxml"));
+        switchView(stage, "admin.fxml");
+    }
+
+    public static void switchView(Stage stage, String fileName) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource(fileName));
         Scene scene = new Scene(fxmlLoader.load(), 320, 600);
         stage.setTitle("Guardians of the Wasteland");
         stage.setScene(scene);
